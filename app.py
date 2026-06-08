@@ -184,7 +184,7 @@ def visualize_lcc_single_plot_v7(years, total_base, total_ai):
         years - width / 2,
         total_base,
         width,
-        label="기존 운영 (ML 기반 예측)",
+        label="기존 운영",
         color="#475569",
         alpha=0.9,
         edgecolor="white",
@@ -194,7 +194,7 @@ def visualize_lcc_single_plot_v7(years, total_base, total_ai):
         years + width / 2,
         total_ai,
         width,
-        label="AI 최적화 (이론식 기반)",
+        label="AI 운영",
         color="#0D9488",
         alpha=0.9,
         edgecolor="white",
@@ -229,7 +229,7 @@ def visualize_lcc_single_plot_v7(years, total_base, total_ai):
 
     ax.set_title("생애주기비용(LCC) 20년 누적 막대그래프", fontsize=26, fontweight="bold", pad=25)
     ax.set_xlabel("누적 연차(년)", fontsize=18, fontweight="bold", labelpad=15)
-    ax.set_ylabel("누적 비용 (억원) [초기 투자비 + 누적 운영비]", fontsize=18, fontweight="bold", labelpad=15)
+    ax.set_ylabel("LCC 누적 비용 (억원) [초기 투자비 + 누적 운영비]", fontsize=18, fontweight="bold", labelpad=15)
     ax.set_xticks(years)
     plt.xticks(fontsize=14, fontweight="bold")
     plt.yticks(fontsize=14, fontweight="bold")
