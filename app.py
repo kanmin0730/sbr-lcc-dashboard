@@ -422,7 +422,7 @@ if submitted:
     if mean_saving >= 0:
         saving_color = "#1D4ED8"
         saving_sign = ""
-        saving_verdict = "절감"
+        saving_verdict = "예측 절감액"
     else:
         saving_color = "#B91C1C"
         saving_sign = "▲"
