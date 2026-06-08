@@ -278,11 +278,6 @@ def visualize_lcc_single_plot_v7(years, total_base, total_ai):
 # ============================================================
 st.markdown("<h2 style='color:#0F766E;'>신규 SBR 시설 대상 AI-LCC 시뮬레이터 대시보드(V7.3)</h2>", unsafe_allow_html=True)
 
-if model_status_msg.startswith("✅"):
-    st.success(model_status_msg)
-else:
-    st.error(model_status_msg)
-
 with st.form("lcc_form"):
     col_left, col_right = st.columns(2)
 
