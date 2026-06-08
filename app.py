@@ -432,7 +432,7 @@ if submitted:
 
         <div style='text-align:center;'>
           <span style='font-size:16px; color:#0F766E; font-weight:bold; display:block; margin-bottom:8px;'>
-            AI 최적화 누적 총 비용 (20년)
+            AI 운영 누적 총 비용 (20년)
           </span>
           <span style='font-size:36px; color:#0D9488; font-weight:800; letter-spacing:-1px;'>
             {np.mean(arr_ai_final):.1f} 억원
