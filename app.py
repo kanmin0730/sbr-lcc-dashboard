@@ -83,7 +83,12 @@ def load_models():
     ml_elec_model = joblib.load(MODEL_DIR / "rf_elec_won_universal.pkl")
     return ml_chem_model, ml_sludge_model, ml_elec_model
 
+model_elec, model_chem, model_sludge = load_models()
 
+# Colab V7.3 코드와 동일한 변수명으로 연결
+ml_elec_model = model_elec
+ml_chem_model = model_chem
+ml_sludge_model = model_sludge
 # ============================================================
 # [3] 단가 / 증액률 상수
 # ============================================================
