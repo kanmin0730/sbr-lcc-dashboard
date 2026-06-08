@@ -83,12 +83,6 @@ def load_models():
     ml_elec_model = joblib.load(MODEL_DIR / "rf_elec_won_universal.pkl")
     return ml_chem_model, ml_sludge_model, ml_elec_model
 
-try:
-    ml_chem_model, ml_sludge_model, ml_elec_model = load_models()
-    model_status_msg = "✅ [파일 연동 성공] ML 모델 로드 완료"
-except Exception as e:
-    ml_chem_model, ml_sludge_model, ml_elec_model = None, None, None
-    model_status_msg = f"🚨 모델 로드 실패: {e}"
 
 # ============================================================
 # [3] 단가 / 증액률 상수
@@ -288,16 +282,6 @@ if model_status_msg.startswith("✅"):
     st.success(model_status_msg)
 else:
     st.error(model_status_msg)
-
-st.markdown(
-    """
-    <p style='color:#64748B; font-size:13px; margin:4px 8px;'>
-    ※ 시설용량: CAPEX 회귀식 입력 / 가동 유량·수질: ML 모델 예측 입력<br>
-    ※ AI OPEX &gt; baseline OPEX 시 음(-)의 절감액이 표시됩니다.
-    </p>
-    """,
-    unsafe_allow_html=True,
-)
 
 with st.form("lcc_form"):
     col_left, col_right = st.columns(2)
