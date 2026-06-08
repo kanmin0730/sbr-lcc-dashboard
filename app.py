@@ -178,7 +178,7 @@ def visualize_lcc_single_plot_v7(years, total_base, total_ai):
         years - width / 2,
         total_base,
         width,
-        label="기존 운영",
+        label="현행 운영 방식",
         color="#475569",
         alpha=0.9,
         edgecolor="white",
@@ -188,7 +188,7 @@ def visualize_lcc_single_plot_v7(years, total_base, total_ai):
         years + width / 2,
         total_ai,
         width,
-        label="AI 운영",
+        label="AI 운영 방식",
         color="#0D9488",
         alpha=0.9,
         edgecolor="white",
@@ -420,7 +420,7 @@ if submitted:
                        display:block; margin-bottom:2px;'>
           </span>
           <span style='font-size:16px; color:#1E293B; font-weight:bold; display:block; margin-bottom:8px;'>
-            기존 운영 누적 총 비용 (20년)
+            현행 운영 누적 총 비용 (20년)
           </span>
           <span style='font-size:36px; color:#2C3E50; font-weight:800; letter-spacing:-1px;'>
             {np.mean(arr_base_final):.1f} 억원
