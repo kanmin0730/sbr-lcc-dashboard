@@ -19,7 +19,7 @@ import streamlit.components.v1 as components
 # [0] Streamlit 기본 설정
 # ============================================================
 st.set_page_config(
-    page_title="신규 SBR 시설 LCC 대시보드 V7.3",
+    page_title="신규 SBR 시설 대상 AI-LCC 시뮬레이터 대시보드(V7.3)",
     page_icon="📊",
     layout="wide",
 )
@@ -85,7 +85,7 @@ def load_models():
 
 try:
     ml_chem_model, ml_sludge_model, ml_elec_model = load_models()
-    model_status_msg = "✅ [파일 연동 성공] 범용 ML 모델 로드 완료"
+    model_status_msg = "✅ [파일 연동 성공] ML 모델 로드 완료"
 except Exception as e:
     ml_chem_model, ml_sludge_model, ml_elec_model = None, None, None
     model_status_msg = f"🚨 모델 로드 실패: {e}"
@@ -282,7 +282,7 @@ def visualize_lcc_single_plot_v7(years, total_base, total_ai):
 # ============================================================
 # [7] UI - Colab ipywidgets 레이아웃을 Streamlit form으로 변환
 # ============================================================
-st.markdown("<h2 style='color:#0F766E;'>📊 신규 SBR 시설 LCC 대시보드 V7.3</h2>", unsafe_allow_html=True)
+st.markdown("<h2 style='color:#0F766E;'>신규 SBR 시설 대상 AI-LCC 시뮬레이터 대시보드(V7.3)</h2>", unsafe_allow_html=True)
 
 if model_status_msg.startswith("✅"):
     st.success(model_status_msg)
@@ -323,15 +323,6 @@ with st.form("lcc_form"):
             unsafe_allow_html=True,
         )
         w_elec_save = st.slider("AI 전력 절감률(%):", min_value=0.0, max_value=30.0, value=10.0, step=0.5)
-        st.markdown(
-            """
-            <p style='color:#94A3B8; font-size:11px; margin:2px 0;'>
-            ※ 슬러지·약품: 이론식 직접 적용 (minimum 제거)<br>
-            ※ 전력: 이론식 없음 → 절감률로 가정 (0% = 보수적)
-            </p>
-            """,
-            unsafe_allow_html=True,
-        )
 
     submitted = st.form_submit_button("▶ 몬테카를로 LCC 통합 시뮬레이션 실행", use_container_width=True)
 
